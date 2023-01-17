@@ -1,13 +1,14 @@
+# Gets a a list of commands from the history file. (Includes commands from other sessions.)
 function oldhistory {
     <#
     .SYNOPSIS
-    Get a list of commands from the history file. If no limit is specified, all commands are returned.
+    Get a list of commands from the history file. If no limit is specified, 50 commands are returned.
 
     .DESCRIPTION
-    Get a list of commands from the history file. If no limit is specified, all commands are returned.
+    Get a list of commands from the history file. If no limit is specified, 50 commands are returned.
 
     .PARAMETER Limit
-    The number of commands to return. If not specified, all commands are returned.
+    The number of commands to return. If not specified, 50 commands are returned.
 
     .OUTPUTS
     A list of commands from the history file.
@@ -30,7 +31,8 @@ function oldhistory {
 
     if ($Limit -gt 0) {
         $commands | Select-Object -Last $Limit
-    } else {
+    }
+    else {
         $commands
     }
 }

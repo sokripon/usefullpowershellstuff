@@ -41,7 +41,7 @@ function Show-Old-Commands {
     $originalCommands = Get-Content -Path "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt"
     $commands = $originalCommands.Clone()
     
-    if ($Limit -eq -1) {
+    if ($Limit -lt 0) {
         $commands = $commands
     }
     elseif ($StartFromOldest) {
